@@ -1,5 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  baseApiUrl: "https://api.zamzaminstitute.com/"
 };
-
-export const baseApiUrl: string = "https://api.zamzaminstitute.com/"

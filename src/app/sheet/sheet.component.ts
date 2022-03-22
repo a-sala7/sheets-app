@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser'
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-sheet',
@@ -7,6 +8,8 @@ import { Title } from '@angular/platform-browser'
   styleUrls: ['./sheet.component.css']
 })
 export class SheetComponent implements OnInit {
+
+  apiUrl = environment.baseApiUrl;
 
   public constructor(private titleService: Title) { }
 
