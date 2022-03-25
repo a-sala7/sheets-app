@@ -1,4 +1,69 @@
 <div class="container mt-5">
-    <p>sheet works!</p>
-    <p>{{ apiUrl }}</p>
+
+    <div class="mb-5">
+        <img class="mx-auto d-block" src="assets/logo.png">
+    </div>
+
+    <div id="loading" *ngIf="this.loading && !this.sheet">
+        <p class="text-center">Loading...</p>
+    </div>
+
+    <div id="notFound" *ngIf="this.loading == false && !this.sheet">
+        <p class="text-center">Sheet not found<p>
+    </div>
+
+    <div id="sheet" *ngIf="this.sheet">
+        <div class="row fs-5">
+            <div class="col-md-6">
+                <h4 class="brand-green">Teacher</h4>
+                <p>
+                    <span class="text-muted">ID: </span>
+                    <span>{{ this.sheet.TeacherId }}</span>
+                </p>
+                <p><span class="text-muted">Name:</span> {{ this.sheet.TeacherName }}</p>
+            </div>
+            <div class="col-md-6">
+                <h4 class="brand-green">Student</h4>
+                <p><span class="text-muted">ID:</span> {{ this.sheet.StudentId }}</p>
+                <p><span class="text-muted">Name:</span> {{ this.sheet.StudentName }}</p>
+                <p><span class="text-muted">Course ID:</span> {{ this.sheet.CourseId }}</p>
+            </div>
+        </div>
+    
+        <div class="my-2">
+            <small class="text-muted">All times are displayed in the following timezone: <br/>
+                {{ this.sheet.StudentTimeZoneName }} (ID: {{ this.sheet.StudentTimeZoneId }})</small>
+        </div>
+    
+        <div class="my-4 w-50 mx-auto" style="border:1px solid rgb(206, 206, 206)"></div>
+    
+        <div class="text-center">
+            <pagination-controls (pageChange)="getPage($event)" id="test">
+            </pagination-controls>
+        </div>
+        <table class="table table-striped table-bordered table-hover table-responsive">
+            <thead>
+                <tr class="darker-brand-blue">
+                    <th scope="col">ID</th>
+                    <th scope="col">Attendance Status</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">New</th>
+                    <th scope="col">Revision</th>
+                    <th scope="col">Fun Activities</th>
+                    <th scope="col">Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let lecture of sheet.Lectures.Objects | paginate: { id: 'test', itemsPerPage: 50, currentPage: currPage, totalItems: totalLecs }">
+                    <td>{{ lecture.Id }}</td>
+                    <td>{{ lecture.AttendanceStatus }}</td>
+                    <td style="min-width: 200px">{{ lecture.DisplayDate }}</td>
+                    <td style="min-width: 200px">{{ lecture.New }}</td>
+                    <td style="min-width: 200px">{{ lecture.Revision }}</td>
+                    <td style="min-width: 200px">{{ lecture.FunActivities }}</td>
+                    <td style="min-width: 200px">{{ lecture.Notes }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

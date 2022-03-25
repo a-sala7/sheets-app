@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SheetComponent } from './sheet/sheet.component';
 
 const routes: Routes = [
-  { path: 'sheet', component: SheetComponent }
+  { path: 'sheet/:courseId/:sk', component: SheetComponent }
 ];
 
 @NgModule({
