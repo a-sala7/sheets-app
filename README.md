@@ -1,27 +1,13 @@
 # SheetsApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
+Small and simple angular application developed for a client with full server-side pagination support.  
+Displays a student's logged classes, used for sending students a single link to their sheets without having them see or log into the internal management system (.NET API/Blazor) which was developed by yours truly. :)
 
-## Development server
+![Application Screenshot](https://github.com/a-sala7/sheets-app/blob/master/screenshot.jpg?raw=true)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Note: I don't plan on open-sourcing the management system itself. But if you are interested, check out my graduation project MetaHR!
 
-## Code scaffolding
+https://github.com/a-sala7/MetaHR/  
+https://github.com/hamdy3212/meta-hr-front  
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+The back end uses a very similar architecture to that project, in fact its somewhat better in architecture and code quality in general. I also contributed to its React front-end.
